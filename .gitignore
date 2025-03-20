@@ -1,0 +1,12 @@
+# 忽略所有文件
+*
+
+# 不忽略 .py 文件
+!*.py
+
+# 不忽略 .gitignore 文件
+!.gitignore
+
+# Python 相关忽略
+__pycache__/
+*.py[cod]
