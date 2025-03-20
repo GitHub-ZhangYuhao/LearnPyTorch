@@ -3,6 +3,7 @@
 
 # 不忽略 .py 文件
 !*.py
+!*.md
 
 # 不忽略 .gitignore 文件
 !.gitignore
