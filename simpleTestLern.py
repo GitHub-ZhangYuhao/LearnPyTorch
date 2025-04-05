@@ -68,5 +68,11 @@ output_feature_map = conv_layer(input_feature_map)
 
 # 使用 nn.functional.conv2d 进行卷积操作
 # 卷积核的Tensor的Shape应该为：输出通道数 * 输入通道数 * 卷积核高度 * 卷积核宽度
-output_feature_map1 = nn.functional.conv2d(input_feature_map, conv_layer.weight)
-print("\noutput_feature_map1", output_feature_map1)
+kernel_weight = torch.tensor([ [[[1, 0, -1],
+                                 [2, 0, -2],
+                                 [1, 0, -1]]] ],
+                             dtype=torch.float16)
+print("kernel_weight_shape: \n", kernel_weight.shape)
+input_feature_map = torch.rand((batch_size,in_channels,4,4), dtype=torch.float16)
+output_feature_map1 = nn.functional.conv2d(input_feature_map, kernel_weight)
+print("\noutput_feature_map1:\n", output_feature_map1)
